@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Devenez un Padawan</h1>
+                {{ form_start(registrationForm) }}
+                <div class="row">
+                    <div class="col">{{ form_row(registrationForm.username) }}</div>
+                    <div class="col"> {{ form_row(registrationForm.plainPassword) }}</div>
+
+                    <!-- Force next columns to break to new line -->
+                    <div class="w-100"></div>
+                    <div class="col"> {{ form_row(registrationForm.email) }}</div>
+
+                    <div class="col"> {{ form_row(registrationForm.github) }}</div>
+                    <!-- Force next columns to break to new line -->
+                    <div class="w-100"></div>
+                    <div class="col">  {{ form_row(registrationForm.nom) }}</div>
+                    <div class="col"> {{ form_row(registrationForm.prenom) }}</div>
+                    <!-- Force next columns to break to new line -->
+                    <div class="w-100"></div>
+                    <div class="col"> {{ form_row(registrationForm.imageFile) }}</div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        {{ form_row(registrationForm.bio) }}
+                    </div>
+                </div>
+
+                <button class="btn btn-primary">S'inscrire</button>
+                {{ form_end(registrationForm) }}
+            </div>
+            <div class="col-4">
+                <img class="img-fluid" src="{{ asset('img/padawan.jpg') }}" alt="">
+                <a href="{{ path('app_login') }}" class="btn btn-block btn-primary">
+                    Déjà un Padawan ? <br> Identifiez-vous</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

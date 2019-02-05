@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% if app.user %}
+            <div class="col-12">
+                {# ton commentaire #}
+                {#<form action="project/add" method="POST">#}
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                {{ form_row(form) }}
+                <button class="btn btn-primary">Proposer un projet</button>
+                {{ form_end(form) }}
+            </div>
+            {% else %}
+                <div class="text-center">
+                <div class="col-8 offset-2">
+                    <h4>Pour proposer un projet au maître Jedi, <br>
+                        vous devez être identifié(e)</h4>
+                    <a class="btn btn-dark"
+                       href="{{ path('app_login') }}">Se connecter</a>
+                </div>
+                <div class="col-6 offset-3">
+                    <img src="{{ asset('img/padawan.jpg') }}" class="img-fluid " alt="">
+                </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock body %}

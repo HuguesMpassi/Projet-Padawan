@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main role="main" class="container">
+        <div class="row">
+            <div class="container mt-8">
+                <div class="row">
+                    <div class="col-8">
+                        <h3>{{ project.nom }}</h3>
+
+       <a class="btn btn-sm btn-outline-warning mt-2 mb-2" href="">Je me lance !</a>
+
+                        <p>{{ project.description }}</p>
+                        {{ form_start(form) }}
+                        {{ form_row(form.github_repository) }}
+                        <button class="btn btn-primary">Je participe</button>
+                        {{ form_end(form) }}
+                    </div>
+                    <div class="col-4 text-center">
+                        <img class="img-fluid" src="{{ vich_uploader_asset(project,'imageFile') }}" alt="{{ project.nom }}">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <hr>
+                        <h4>Padawans</h4>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-lg-1">
+                        <img class="img-fluid rounded-circle" src="img/charlie-ico.jpg" alt="">
+                        <h6>Charlie</h6>
+                        <p><a class="btn btn-outline-info btn-sm" href="#" role="button">Github</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-1">
+                        <img class="img-fluid rounded-circle" src="img/fanch-ico.jpg" alt="">
+                        <h6>Charlie</h6>
+                        <p><a class="btn btn-outline-info btn-sm" href="#" role="button">Github</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-1">
+                        <img class="img-fluid rounded-circle" src="img/marie-ico.jpg" alt="">
+                        <h6>Marie</h6>
+                        <p><a class="btn btn-outline-info btn-sm" href="#" role="button">Github</a></p>
+                    </div><!-- /.col-lg-4 -->
+                </div>
+
+            </div>
+
+
+
+        </div>
+        </div>
+    </main>
+{% endblock body %}
